@@ -10,7 +10,8 @@
         // Player selection
 
         function playerPlay() {
-			let playerSelection = prompt(("Rock, paper, scissors - best out of 5!").toLowerCase());
+            let playerSelection = prompt(("Choose: Rock/paper/scissors"));
+            playerSelection = playerSelection.toLocaleLowerCase();
 			console.log("You choose: " + playerSelection);
 			return playerSelection;
 		}
@@ -20,7 +21,7 @@
         function computerPlay() {
 			let computerChoices = ["rock", "paper", "scissors"]
 			let computerSelection = computerChoices[Math.floor(Math.random() * 3)];
-			console.log("The Computer chose " + computerSelection);
+			console.log("The Computer chose: " + computerSelection);
 			return computerSelection;
         }
         
