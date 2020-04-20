@@ -3,85 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+	<title>Rock Paper Scissors</title>
+	<script src="https://kit.fontawesome.com/cb7b10d8cb.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <script>
-        // Player selection
 
-        function playerPlay() {
-            let playerSelection = prompt(("Choose: Rock/paper/scissors"));
-            playerSelection = playerSelection.toLocaleLowerCase();
-			console.log("You choose: " + playerSelection);
-			return playerSelection;
-		}
+	<div class="container">
+		<main>
+			<div class="display">
+				<div class="playerScore">
+					<h1>Your Score</h1>
+				</div>
+				<div class="round">
+					<h1>Round</h1>
+				</div>
+				<div class="computerScore">
+					<h1>Computer Score</h1>
+				</div>
+			</div>
+			<div class="button">
+				<h1>Choose Your Weapon!</h1>
+				<button class="rock"><i class="fas fa-hand-rock"></i></button>
+				<button class="paper"><i class="fas fa-hand-paper"></i></button>
+				<button class="scissor"><i class="fas fa-hand-scissors"></i></button>
+			</div>
+		</main>
+		<aside>
+			<h1>How To Play The Game:</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente repellendus harum nemo ipsum adipisci odit architecto excepturi quia, repudiandae perferendis cum nulla sed, dolorem autem debitis vero eius beatae dignissimos.</p>
+		</aside>
+	</div>
 
-        //computer will choose and return rock/paper/scissor.
-
-        function computerPlay() {
-			let computerChoices = ["rock", "paper", "scissors"]
-			let computerSelection = computerChoices[Math.floor(Math.random() * 3)];
-			console.log("Computer chose: " + computerSelection);
-			return computerSelection;
-        }
-        
-        //Take player and computer choice and return a winner.
-        
-        function playRound(playerSelection,computerSelection) {
-			let result;
-			if (playerSelection == computerSelection) {
-				result = "It's a draw!";
-			} else if (playerSelection === "rock" && computerSelection === "paper") {
-				result = "You lose, paper covers rock!";
-			} else if (playerSelection === "rock" && computerSelection === "scissors") {
-				result = "You win, rock crushes scissors!";
-			} else if (playerSelection === "paper" && computerSelection === "rock") {
-				result = "You win, paper covers rock!";
-			} else if (playerSelection === "paper" && computerSelection === "scissors") {
-				result = "You lose, scissors cuts paper!";
-			} else if (playerSelection === "scissors" && computerSelection === "rock") {
-				result = "You lose, rock crushes scissors!";
-			} else if (playerSelection === "scissors" && computerSelection === "paper") {
-				result = "You win, scissors cuts paper!";
-			}
-			return result;
-		}
-		//Play five round game
-
-		function game() {
-			let playerScore = 0;
-			let computerScore = 0;
-			let score = 0;
-			let finalScore;
-			for (let i = 0; i < 5; i++) {
-				let computerSelection = computerPlay();
-				let playerSelection = playerPlay();
-				let roundPlay = playRound(playerSelection,computerSelection);
-				console.log(roundPlay);
-
-				if (roundPlay === "It's a draw!") {
-					score += 0;
-				} else if (roundPlay === "You win, rock crushes scissors!" || roundPlay === "You win, paper covers rock!" || roundPlay === "You win, scissors cuts paper!") {
-					playerScore += 1;
-				} else {
-					computerScore += 1;
-				}
-			}
-
-			if (playerScore === computerScore) {
-				finalScore = "Match Draw!..Refresh The Page To Play Again. Your Score: " + playerScore + " Computer Score: " + computerScore;
-			} else if (playerScore > computerScore) {
-				finalScore = "Congrats! You Won The Match!. Your Score: " + playerScore + " Computer Score: " + computerScore;
-			} else {
-				finalScore = "You Loose This Match. Your Score: " + playerScore + " Computer Score: " + computerScore;
-			}
-
-			return finalScore;
-
-		}			
-
-	console.log(game());
-
-    </script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
