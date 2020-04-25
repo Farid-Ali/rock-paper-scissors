@@ -30,9 +30,11 @@ playerInput.forEach((button) => {
 		calculateScore(playerChoce,computerChoice);
 		//update display
 		updateDisplay();
+		//end game
+		endGame();
 
 
-		console.log(playerChoce);
+		console.log('player choice: ' + playerChoce);
 		console.log('computer choice: ' + computerChoice);
 		console.log(roundWinner);
 
@@ -50,7 +52,18 @@ function updateDisplay() {
 //Decleare game winner and display end game message
 
 function endGame() {
+	let endMessage;
+	if (playerScore === 3) {
+		endMessage = 'Congratulations! You Won The Match';
+		displayRoundMessage.textContent = endMessage;
+		displayRoundMessage.style.cssText = 'color: blue; background: yellow';
+	}
 	
+	if (computerScore === 3) {
+		endMessage = 'Better Luck Next Time';
+		displayRoundMessage.textContent = endMessage;
+		displayRoundMessage.style.cssText = 'color: yellow; background: red';
+	}
 }
 
 //computer will choose and return rock/paper/scissor.
