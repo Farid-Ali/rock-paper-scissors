@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Rock Paper Scissors</title>
-	<script src="https://kit.fontawesome.com/cb7b10d8cb.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -14,19 +13,23 @@
 			<div class="display">
 				<div class="playerScore">
 					<h1>Your Score</h1>
+					<div id="playerScore"></div>
 				</div>
 				<div class="round">
 					<h1>Round</h1>
+					<div id="round"></div>
 				</div>
 				<div class="computerScore">
 					<h1>Computer Score</h1>
+					<div id="computerScore"></div>
 				</div>
 			</div>
 			<div class="button">
+				<div id="message"></div>
 				<h1>Choose Your Weapon!</h1>
-				<button class="rock"><i class="fas fa-hand-rock"></i></button>
-				<button class="paper"><i class="fas fa-hand-paper"></i></button>
-				<button class="scissor"><i class="fas fa-hand-scissors"></i></button>
+				<button id="rock" data-Id="1">ROCK</button>
+				<button id="paper" data-Id="2">PAPER</i></button>
+				<button id="scissors" data-Id="3">SCISSOR</button>
 			</div>
 		</main>
 		<aside>
