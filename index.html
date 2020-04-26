@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
 	<title>Rock Paper Scissors</title>
 	<link rel="stylesheet" href="styles/style.css">
 </head>
@@ -11,21 +12,21 @@
 	<div class="container">
 		<main>
 			<div class="display">
-				<div class="playerScore">
+				<div class="playerScore displayContent">
 					<h1>Your Score</h1>
-					<div id="playerScore"></div>
+					<div id="playerScore" class="content">0</div>
 				</div>
-				<div class="round">
+				<div class="round displayContent">
 					<h1>Round</h1>
-					<div id="round"></div>
+					<div id="round" class="content">0</div>
 				</div>
-				<div class="computerScore">
+				<div class="computerScore displayContent">
 					<h1>Computer Score</h1>
-					<div id="computerScore"></div>
+					<div id="computerScore" class="content">0</div>
 				</div>
 			</div>
-			<div class="button">
-				<div id="message"></div>
+			<div class="buttons">
+				<div id="message" class="content"></div>
 				<h1>Choose Your Weapon!</h1>
 				<button id="rock" data-Id="1">ROCK</button>
 				<button id="paper" data-Id="2">PAPER</i></button>
@@ -34,7 +35,7 @@
 		</main>
 		<aside>
 			<h1>How To Play The Game:</h1>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente repellendus harum nemo ipsum adipisci odit architecto excepturi quia, repudiandae perferendis cum nulla sed, dolorem autem debitis vero eius beatae dignissimos.</p>
+			<p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente repellendus harum nemo ipsum adipisci odit architecto excepturi quia, repudiandae perferendis cum nulla sed, dolorem autem debitis vero eius beatae dignissimos.</p>
 		</aside>
 	</div>
 

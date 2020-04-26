@@ -30,7 +30,7 @@ playerInput.forEach((button) => {
 		calculateScore(playerChoce,computerChoice);
 		//update display
 		updateDisplay();
-		//end game
+		//end the game with a message
 		endGame();
 
 
@@ -56,13 +56,13 @@ function endGame() {
 	if (playerScore === 3) {
 		endMessage = 'Congratulations! You Won The Match';
 		displayRoundMessage.textContent = endMessage;
-		displayRoundMessage.style.cssText = 'color: blue; background: yellow';
+		displayRoundMessage.style.cssText = 'color: blue; background: #f6f578';
 	}
 	
 	if (computerScore === 3) {
 		endMessage = 'Better Luck Next Time';
 		displayRoundMessage.textContent = endMessage;
-		displayRoundMessage.style.cssText = 'color: yellow; background: red';
+		displayRoundMessage.style.cssText = 'color: yellow; background: #ff5722';
 	}
 }
 
@@ -118,5 +118,11 @@ function calculateScore(player,computer) {
 		playerScore++;
 	}
 	return;
+}
+
+//Reset functon: triger when game winner decleared
+
+function reset() {
+	
 }
 
