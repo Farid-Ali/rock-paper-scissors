@@ -16,3 +16,5 @@ Technology used to build the game:
 2.CSS3
 3.JavaScript
 
+Page-link: https://farid-ali.github.io/rock-paper-scissors/
+
