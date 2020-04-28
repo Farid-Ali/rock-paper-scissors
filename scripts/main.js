@@ -11,6 +11,26 @@ const displayPlayerScore = document.querySelector('#playerScore');
 const displayComputerScore = document.querySelector('#computerScore');
 const displayRound = document.querySelector('#round');
 const displayRoundMessage = document.querySelector('#message');
+const playerInputButtons = document.querySelector('.buttons');
+
+//Player selection button creation
+
+const rock = document.createElement('button');
+rock.setAttribute('id', 'rock');
+rock.textContent = 'ROCK';
+
+const paper = document.createElement('button');
+paper.setAttribute('id', 'paper');
+paper.textContent = 'PAPER';
+
+const scissor = document.createElement('button');
+scissor.setAttribute('id', 'scissors');
+scissor.textContent = 'SCISSOR';
+
+
+playerInputButtons.appendChild(rock);
+playerInputButtons.appendChild(paper);
+playerInputButtons.appendChild(scissor);
 
 // Take the player input and play the game
 
@@ -32,11 +52,13 @@ playerInput.forEach((button) => {
 		updateDisplay();
 		//end the game with a message
 		endGame();
+		//reset the game
+		reset();
 
 
-		console.log('player choice: ' + playerChoce);
-		console.log('computer choice: ' + computerChoice);
-		console.log(roundWinner);
+		//console.log('player choice: ' + playerChoce);
+		//console.log('computer choice: ' + computerChoice);
+		//console.log(roundWinner);
 
 	})
 })
@@ -63,6 +85,10 @@ function endGame() {
 		endMessage = 'Better Luck Next Time';
 		displayRoundMessage.textContent = endMessage;
 		displayRoundMessage.style.cssText = 'color: yellow; background: #ff5722';
+	}
+
+	if (playerScore != 3) {
+		displayRoundMessage.style.cssText = 'color: black; background: white';
 	}
 }
 
@@ -120,9 +146,41 @@ function calculateScore(player,computer) {
 	return;
 }
 
+//Create the reset button after winner decleared
+
+const resetButton = document.createElement('button');
+resetButton.setAttribute('id', 'reset');
+resetButton.textContent = 'RESET';
+
 //Reset functon: triger when game winner decleared
 
 function reset() {
-	
+	if (playerScore === 3 || computerScore === 3) {
+		playerInputButtons.appendChild(resetButton);
+		playerInputButtons.removeChild(rock);
+		playerInputButtons.removeChild(paper);
+		playerInputButtons.removeChild(scissor);
+
+	}
 }
+
+//Regenerate player input button
+
+resetButton.addEventListener('click', () => {
+
+	playerScore = 0;
+	computerScore = 0;
+	round = 0;
+	updateDisplay();
+	
+	playerInputButtons.appendChild(rock);
+	playerInputButtons.appendChild(paper);
+	playerInputButtons.appendChild(scissor);
+	playerInputButtons.removeChild(resetButton);
+	
+	console.log(playerScore);
+	console.log(computerScore);
+	console.log(round);
+
+})
 
