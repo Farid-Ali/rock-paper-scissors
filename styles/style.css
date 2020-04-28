@@ -8,12 +8,18 @@
     font-family: sans-serif;
 }
 
+body {
+    background: url(../images/background.jpg) no-repeat;
+    background-size: cover;
+}
+
 h1 {
     font-size: 2rem;
     padding: 6px 4px;
     text-align: center;
     background-color: #00bcd4;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Playfair Display', serif;
+    color: rgb(46, 39, 39);
 }
 
 .content {
@@ -48,7 +54,17 @@ main {
     flex: 1;
     text-align: center;
 }
+
+/* Message display styles*/
+
+#message {
+    border: 3px inset #b2ebf2;
+    padding-top: 15px;
+    background-color: #535751;
+    color: white;
+}
 /* button element styles */
+
 .buttons {
     text-align: center;
 }
@@ -74,6 +90,7 @@ button {
 #paper {
     margin: 0 15px;
 }
+/* Reset button styles */
 
 #reset {
     width: 20%;
@@ -83,12 +100,12 @@ button {
     font-size: 1.8rem;
     font-weight: bold;
     border-radius: 5px;
-    background-color: white;
+    background-color: #535751;
     border: 0;
     margin-top: 3rem;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 4px;
-    color: #dd2c00;
+    color: white;
 }
 
 /* side panel styles */

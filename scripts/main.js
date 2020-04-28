@@ -69,6 +69,7 @@ function updateDisplay() {
 	displayPlayerScore.textContent = playerScore;
 	displayComputerScore.textContent = computerScore;
 	displayRound.textContent = round;
+
 }
 
 //Decleare game winner and display end game message
@@ -84,11 +85,10 @@ function endGame() {
 	if (computerScore === 3) {
 		endMessage = 'Better Luck Next Time';
 		displayRoundMessage.textContent = endMessage;
-		displayRoundMessage.style.cssText = 'color: yellow; background: #ff5722';
 	}
 
 	if (playerScore != 3) {
-		displayRoundMessage.style.cssText = 'color: black; background: white';
+		displayRoundMessage.style.cssText = 'color: white'
 	}
 }
 
@@ -150,7 +150,7 @@ function calculateScore(player,computer) {
 
 const resetButton = document.createElement('button');
 resetButton.setAttribute('id', 'reset');
-resetButton.textContent = 'RESET';
+resetButton.textContent = 'PLAY AGAIN';
 
 //Reset functon: triger when game winner decleared
 
@@ -172,15 +172,15 @@ resetButton.addEventListener('click', () => {
 	computerScore = 0;
 	round = 0;
 	updateDisplay();
+
+	displayRoundMessage.textContent = 'Good Luck!';
+	displayRoundMessage.style.cssText = 'background: #535751'
 	
 	playerInputButtons.appendChild(rock);
 	playerInputButtons.appendChild(paper);
 	playerInputButtons.appendChild(scissor);
 	playerInputButtons.removeChild(resetButton);
 	
-	console.log(playerScore);
-	console.log(computerScore);
-	console.log(round);
 
 })
 
